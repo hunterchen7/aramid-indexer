@@ -12,6 +12,7 @@ import setLatestRound from './repository/setLatestRound';
 import getLatestRound from './repository/getLatestRound';
 import asyncDelay from './common/asyncDelay';
 import getSecureConfiguration from './common/getSecureConfiguration';
+import tellK8SSuccessState from './common/tellK8SSuccessState';
 const main = async () => {
   const logger = getLogger();
   try {
@@ -25,6 +26,9 @@ const main = async () => {
     logger.debug(`before getAlgodClient`);
     const client = getAlgodClient();
     logger.debug(`after getAlgodClient`);
+
+    tellK8SSuccessState();
+
     while (true) {
       logger.debug(`processing round ${round}`);
       if (round % 100 == 0) {
