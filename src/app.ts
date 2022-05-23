@@ -32,18 +32,18 @@ const main = async () => {
 
     while (true) {
       logger.debug(`processing round ${round}`);
-      if (round % 100 == 0) {
+      if (round % 1000 == 0) {
         logger.info(`processing round ${round}`);
       }
       const confirmedRound = round;
-      logger.debug(`before statusAfterBlock ${round}`);
+      //logger.debug(`before statusAfterBlock ${round}`);
       const status = await client.statusAfterBlock(round).do();
       asyncDelay(config.algod.delay);
-      logger.debug(`after statusAfterBlock ${round}`);
-      logger.debug(`before block ${confirmedRound}`);
+      //logger.debug(`after statusAfterBlock ${round}`);
+      //logger.debug(`before block ${confirmedRound}`);
       const block = await client.block(confirmedRound).do();
       asyncDelay(config.algod.delay);
-      logger.debug(`after block ${confirmedRound}`);
+      //logger.debug(`after block ${confirmedRound}`);
       //console.log('block.block', block.block);
       if (block.block.txns) {
         let countProcessedTxns = 0;
