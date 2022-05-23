@@ -21,9 +21,9 @@ const main = async () => {
     const config = getSecureConfiguration();
     let round = await getLatestRound(config.indexerId);
     let saveRound = true;
-    const checkOneBlock = true;
+    const checkOneBlock = false;
     if (checkOneBlock) saveRound = false;
-    round = 15986363;
+    //round = 15986363;
     logger.debug(`starting at round ${round}`);
     logger.debug(`before getAlgodClient`);
     const client = getAlgodClient();
