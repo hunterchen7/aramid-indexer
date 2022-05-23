@@ -46,6 +46,7 @@ const getLogger = () => {
     ],
   });
   loggerInstance = logger;
+  logger.level = 'debug';
   return loggerInstance;
 };
 export default getLogger;

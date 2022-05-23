@@ -26,7 +26,8 @@ const main = async () => {
     logger.debug(`before getAlgodClient`);
     const client = getAlgodClient();
     logger.debug(`after getAlgodClient`);
-
+    const status = await client.statusAfterBlock(round).do();
+    console.log(status);
     tellK8SSuccessState();
 
     while (true) {
