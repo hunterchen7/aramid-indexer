@@ -1,18 +1,19 @@
 import { gql } from '@apollo/client/core';
-import getApolloClient from './getApolloClient';
+import getApolloClient from '../common/getApolloClient';
 
 const query = gql`
-  mutation update_indexer_by_pk($round: bigint!) {
-    update_indexer_by_pk(pk_columns: { id: 1 }, _set: { round: $round }) {
+  mutation update_indexer_by_pk($id: int, $round: bigint!) {
+    update_indexer_by_pk(pk_columns: { id: $id }, _set: { round: $round }) {
       round
     }
   }
 `;
-const setLatestRound = (round: number) => {
+const setLatestRound = (id: number, round: number) => {
   const client = getApolloClient();
   client.mutate({
     mutation: query,
     variables: {
+      id: id,
       round: round,
     },
   });

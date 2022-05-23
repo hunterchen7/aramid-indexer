@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client/core';
-import getApolloClient from './getApolloClient';
+import getApolloClient from '../common/getApolloClient';
 import { Question } from '../generated/graphql';
+import getToken from './getToken';
 
 const query = gql`
   mutation insert_question(
@@ -13,7 +14,6 @@ const query = gql`
     $open_from_round: bigint!
     $open_from_time: timestamptz!
     $questioner: String!
-    $round: bigint!
     $text: String!
     $title: String!
     $token: Int
@@ -31,7 +31,6 @@ const query = gql`
         open_from_round: $open_from_round
         open_from_time: $open_from_time
         questioner: $questioner
-        round: $round
         text: $text
         title: $title
         token: $token
@@ -48,27 +47,29 @@ const query = gql`
     }
   }
 `;
-const setLatestRound = (question: Question) => {
+const insertQuestion = async (question: Question) => {
   const client = getApolloClient();
-  client.mutate({
+
+  return await client.mutate({
     mutation: query,
     variables: {
-      round: question.asa,
       category: question.category,
       encryption_address: question.encryption_address,
       ending_round: question.ending_round,
-      env: question.env,
       json: question.json,
       open_from_round: question.open_from_round,
       open_from_time: question.open_from_time,
       questioner: question.questioner,
       text: question.text,
       title: question.title,
-      token: question.token,
       tx: question.tx,
       url: question.url,
+
+      env: question.env,
+      asa: question.asa,
+      token: question.token,
     },
   });
 };
 
-export default setLatestRound;
+export default insertQuestion;

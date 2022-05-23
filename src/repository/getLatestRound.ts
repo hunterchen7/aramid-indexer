@@ -1,17 +1,20 @@
 import { gql } from '@apollo/client/core';
-import getApolloClient from './getApolloClient';
+import getApolloClient from '../common/getApolloClient';
 
 const query = gql`
-  query MyQuery2 {
-    indexer_by_pk(id: 1) {
+  query indexer_by_pk($id: int) {
+    indexer_by_pk(id: $id) {
       round
     }
   }
 `;
-const getLatestRound = async () => {
+const getLatestRound = async (id: number) => {
   const client = getApolloClient();
   const res = await client.query({
     query: query,
+    variables: {
+      id: id,
+    },
   });
   return res.data.indexer_by_pk.round;
 };

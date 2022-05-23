@@ -74,306 +74,6 @@ export type Bigint_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['bigint']>>;
 };
 
-/** columns and relationships of "cast" */
-export type Cast = {
-  __typename?: 'cast';
-  address: Scalars['String'];
-  asa: Scalars['bigint'];
-  created_at: Scalars['timestamptz'];
-  env: Scalars['String'];
-  id: Scalars['Int'];
-  json: Scalars['String'];
-  questiontx: Scalars['String'];
-  round: Scalars['bigint'];
-  token: Scalars['Int'];
-  tx: Scalars['String'];
-  updated_at: Scalars['timestamptz'];
-};
-
-/** aggregated selection of "cast" */
-export type Cast_Aggregate = {
-  __typename?: 'cast_aggregate';
-  aggregate?: Maybe<Cast_Aggregate_Fields>;
-  nodes: Array<Cast>;
-};
-
-/** aggregate fields of "cast" */
-export type Cast_Aggregate_Fields = {
-  __typename?: 'cast_aggregate_fields';
-  avg?: Maybe<Cast_Avg_Fields>;
-  count: Scalars['Int'];
-  max?: Maybe<Cast_Max_Fields>;
-  min?: Maybe<Cast_Min_Fields>;
-  stddev?: Maybe<Cast_Stddev_Fields>;
-  stddev_pop?: Maybe<Cast_Stddev_Pop_Fields>;
-  stddev_samp?: Maybe<Cast_Stddev_Samp_Fields>;
-  sum?: Maybe<Cast_Sum_Fields>;
-  var_pop?: Maybe<Cast_Var_Pop_Fields>;
-  var_samp?: Maybe<Cast_Var_Samp_Fields>;
-  variance?: Maybe<Cast_Variance_Fields>;
-};
-
-
-/** aggregate fields of "cast" */
-export type Cast_Aggregate_FieldsCountArgs = {
-  columns?: InputMaybe<Array<Cast_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']>;
-};
-
-/** aggregate avg on columns */
-export type Cast_Avg_Fields = {
-  __typename?: 'cast_avg_fields';
-  asa?: Maybe<Scalars['Float']>;
-  id?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
-  token?: Maybe<Scalars['Float']>;
-};
-
-/** Boolean expression to filter rows from the table "cast". All fields are combined with a logical 'AND'. */
-export type Cast_Bool_Exp = {
-  _and?: InputMaybe<Array<Cast_Bool_Exp>>;
-  _not?: InputMaybe<Cast_Bool_Exp>;
-  _or?: InputMaybe<Array<Cast_Bool_Exp>>;
-  address?: InputMaybe<String_Comparison_Exp>;
-  asa?: InputMaybe<Bigint_Comparison_Exp>;
-  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-  env?: InputMaybe<String_Comparison_Exp>;
-  id?: InputMaybe<Int_Comparison_Exp>;
-  json?: InputMaybe<String_Comparison_Exp>;
-  questiontx?: InputMaybe<String_Comparison_Exp>;
-  round?: InputMaybe<Bigint_Comparison_Exp>;
-  token?: InputMaybe<Int_Comparison_Exp>;
-  tx?: InputMaybe<String_Comparison_Exp>;
-  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-};
-
-/** unique or primary key constraints on table "cast" */
-export enum Cast_Constraint {
-  /** unique or primary key constraint */
-  CastPkey = 'cast_pkey'
-}
-
-/** input type for incrementing numeric columns in table "cast" */
-export type Cast_Inc_Input = {
-  asa?: InputMaybe<Scalars['bigint']>;
-  id?: InputMaybe<Scalars['Int']>;
-  round?: InputMaybe<Scalars['bigint']>;
-  token?: InputMaybe<Scalars['Int']>;
-};
-
-/** input type for inserting data into table "cast" */
-export type Cast_Insert_Input = {
-  address?: InputMaybe<Scalars['String']>;
-  asa?: InputMaybe<Scalars['bigint']>;
-  created_at?: InputMaybe<Scalars['timestamptz']>;
-  env?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['Int']>;
-  json?: InputMaybe<Scalars['String']>;
-  questiontx?: InputMaybe<Scalars['String']>;
-  round?: InputMaybe<Scalars['bigint']>;
-  token?: InputMaybe<Scalars['Int']>;
-  tx?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']>;
-};
-
-/** aggregate max on columns */
-export type Cast_Max_Fields = {
-  __typename?: 'cast_max_fields';
-  address?: Maybe<Scalars['String']>;
-  asa?: Maybe<Scalars['bigint']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
-  env?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
-  json?: Maybe<Scalars['String']>;
-  questiontx?: Maybe<Scalars['String']>;
-  round?: Maybe<Scalars['bigint']>;
-  token?: Maybe<Scalars['Int']>;
-  tx?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
-};
-
-/** aggregate min on columns */
-export type Cast_Min_Fields = {
-  __typename?: 'cast_min_fields';
-  address?: Maybe<Scalars['String']>;
-  asa?: Maybe<Scalars['bigint']>;
-  created_at?: Maybe<Scalars['timestamptz']>;
-  env?: Maybe<Scalars['String']>;
-  id?: Maybe<Scalars['Int']>;
-  json?: Maybe<Scalars['String']>;
-  questiontx?: Maybe<Scalars['String']>;
-  round?: Maybe<Scalars['bigint']>;
-  token?: Maybe<Scalars['Int']>;
-  tx?: Maybe<Scalars['String']>;
-  updated_at?: Maybe<Scalars['timestamptz']>;
-};
-
-/** response of any mutation on the table "cast" */
-export type Cast_Mutation_Response = {
-  __typename?: 'cast_mutation_response';
-  /** number of rows affected by the mutation */
-  affected_rows: Scalars['Int'];
-  /** data from the rows affected by the mutation */
-  returning: Array<Cast>;
-};
-
-/** on_conflict condition type for table "cast" */
-export type Cast_On_Conflict = {
-  constraint: Cast_Constraint;
-  update_columns?: Array<Cast_Update_Column>;
-  where?: InputMaybe<Cast_Bool_Exp>;
-};
-
-/** Ordering options when selecting data from "cast". */
-export type Cast_Order_By = {
-  address?: InputMaybe<Order_By>;
-  asa?: InputMaybe<Order_By>;
-  created_at?: InputMaybe<Order_By>;
-  env?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  json?: InputMaybe<Order_By>;
-  questiontx?: InputMaybe<Order_By>;
-  round?: InputMaybe<Order_By>;
-  token?: InputMaybe<Order_By>;
-  tx?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** primary key columns input for table: cast */
-export type Cast_Pk_Columns_Input = {
-  id: Scalars['Int'];
-};
-
-/** select columns of table "cast" */
-export enum Cast_Select_Column {
-  /** column name */
-  Address = 'address',
-  /** column name */
-  Asa = 'asa',
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  Env = 'env',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  Json = 'json',
-  /** column name */
-  Questiontx = 'questiontx',
-  /** column name */
-  Round = 'round',
-  /** column name */
-  Token = 'token',
-  /** column name */
-  Tx = 'tx',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-/** input type for updating data in table "cast" */
-export type Cast_Set_Input = {
-  address?: InputMaybe<Scalars['String']>;
-  asa?: InputMaybe<Scalars['bigint']>;
-  created_at?: InputMaybe<Scalars['timestamptz']>;
-  env?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['Int']>;
-  json?: InputMaybe<Scalars['String']>;
-  questiontx?: InputMaybe<Scalars['String']>;
-  round?: InputMaybe<Scalars['bigint']>;
-  token?: InputMaybe<Scalars['Int']>;
-  tx?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']>;
-};
-
-/** aggregate stddev on columns */
-export type Cast_Stddev_Fields = {
-  __typename?: 'cast_stddev_fields';
-  asa?: Maybe<Scalars['Float']>;
-  id?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
-  token?: Maybe<Scalars['Float']>;
-};
-
-/** aggregate stddev_pop on columns */
-export type Cast_Stddev_Pop_Fields = {
-  __typename?: 'cast_stddev_pop_fields';
-  asa?: Maybe<Scalars['Float']>;
-  id?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
-  token?: Maybe<Scalars['Float']>;
-};
-
-/** aggregate stddev_samp on columns */
-export type Cast_Stddev_Samp_Fields = {
-  __typename?: 'cast_stddev_samp_fields';
-  asa?: Maybe<Scalars['Float']>;
-  id?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
-  token?: Maybe<Scalars['Float']>;
-};
-
-/** aggregate sum on columns */
-export type Cast_Sum_Fields = {
-  __typename?: 'cast_sum_fields';
-  asa?: Maybe<Scalars['bigint']>;
-  id?: Maybe<Scalars['Int']>;
-  round?: Maybe<Scalars['bigint']>;
-  token?: Maybe<Scalars['Int']>;
-};
-
-/** update columns of table "cast" */
-export enum Cast_Update_Column {
-  /** column name */
-  Address = 'address',
-  /** column name */
-  Asa = 'asa',
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  Env = 'env',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  Json = 'json',
-  /** column name */
-  Questiontx = 'questiontx',
-  /** column name */
-  Round = 'round',
-  /** column name */
-  Token = 'token',
-  /** column name */
-  Tx = 'tx',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-/** aggregate var_pop on columns */
-export type Cast_Var_Pop_Fields = {
-  __typename?: 'cast_var_pop_fields';
-  asa?: Maybe<Scalars['Float']>;
-  id?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
-  token?: Maybe<Scalars['Float']>;
-};
-
-/** aggregate var_samp on columns */
-export type Cast_Var_Samp_Fields = {
-  __typename?: 'cast_var_samp_fields';
-  asa?: Maybe<Scalars['Float']>;
-  id?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
-  token?: Maybe<Scalars['Float']>;
-};
-
-/** aggregate variance on columns */
-export type Cast_Variance_Fields = {
-  __typename?: 'cast_variance_fields';
-  asa?: Maybe<Scalars['Float']>;
-  id?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
-  token?: Maybe<Scalars['Float']>;
-};
-
 /** columns and relationships of "delegation" */
 export type Delegation = {
   __typename?: 'delegation';
@@ -448,7 +148,9 @@ export type Delegation_Bool_Exp = {
 /** unique or primary key constraints on table "delegation" */
 export enum Delegation_Constraint {
   /** unique or primary key constraint */
-  DelegationPkey = 'delegation_pkey'
+  DelegationPkey = 'delegation_pkey',
+  /** unique or primary key constraint */
+  DelegationTxKey = 'delegation_tx_key'
 }
 
 /** input type for incrementing numeric columns in table "delegation" */
@@ -737,7 +439,9 @@ export type Etg_Bool_Exp = {
 /** unique or primary key constraints on table "etg" */
 export enum Etg_Constraint {
   /** unique or primary key constraint */
-  EtgPkey = 'etg_pkey'
+  EtgPkey = 'etg_pkey',
+  /** unique or primary key constraint */
+  EtgTxKey = 'etg_tx_key'
 }
 
 /** input type for incrementing numeric columns in table "etg" */
@@ -1014,6 +718,8 @@ export type Indexer_Bool_Exp = {
 /** unique or primary key constraints on table "indexer" */
 export enum Indexer_Constraint {
   /** unique or primary key constraint */
+  IndexerInstanceKey = 'indexer_instance_key',
+  /** unique or primary key constraint */
   IndexerPkey = 'indexer_pkey'
 }
 
@@ -1171,10 +877,6 @@ export type Indexer_Variance_Fields = {
 /** mutation root */
 export type Mutation_Root = {
   __typename?: 'mutation_root';
-  /** delete data from the table: "cast" */
-  delete_cast?: Maybe<Cast_Mutation_Response>;
-  /** delete single row from the table: "cast" */
-  delete_cast_by_pk?: Maybe<Cast>;
   /** delete data from the table: "delegation" */
   delete_delegation?: Maybe<Delegation_Mutation_Response>;
   /** delete single row from the table: "delegation" */
@@ -1199,14 +901,14 @@ export type Mutation_Root = {
   delete_token?: Maybe<Token_Mutation_Response>;
   /** delete single row from the table: "token" */
   delete_token_by_pk?: Maybe<Token>;
-  /** delete data from the table: "trustedlist" */
-  delete_trustedlist?: Maybe<Trustedlist_Mutation_Response>;
-  /** delete single row from the table: "trustedlist" */
-  delete_trustedlist_by_pk?: Maybe<Trustedlist>;
-  /** insert data into the table: "cast" */
-  insert_cast?: Maybe<Cast_Mutation_Response>;
-  /** insert a single row into the table: "cast" */
-  insert_cast_one?: Maybe<Cast>;
+  /** delete data from the table: "trusted_list" */
+  delete_trusted_list?: Maybe<Trusted_List_Mutation_Response>;
+  /** delete single row from the table: "trusted_list" */
+  delete_trusted_list_by_pk?: Maybe<Trusted_List>;
+  /** delete data from the table: "vote" */
+  delete_vote?: Maybe<Vote_Mutation_Response>;
+  /** delete single row from the table: "vote" */
+  delete_vote_by_pk?: Maybe<Vote>;
   /** insert data into the table: "delegation" */
   insert_delegation?: Maybe<Delegation_Mutation_Response>;
   /** insert a single row into the table: "delegation" */
@@ -1231,14 +933,14 @@ export type Mutation_Root = {
   insert_token?: Maybe<Token_Mutation_Response>;
   /** insert a single row into the table: "token" */
   insert_token_one?: Maybe<Token>;
-  /** insert data into the table: "trustedlist" */
-  insert_trustedlist?: Maybe<Trustedlist_Mutation_Response>;
-  /** insert a single row into the table: "trustedlist" */
-  insert_trustedlist_one?: Maybe<Trustedlist>;
-  /** update data of the table: "cast" */
-  update_cast?: Maybe<Cast_Mutation_Response>;
-  /** update single row of the table: "cast" */
-  update_cast_by_pk?: Maybe<Cast>;
+  /** insert data into the table: "trusted_list" */
+  insert_trusted_list?: Maybe<Trusted_List_Mutation_Response>;
+  /** insert a single row into the table: "trusted_list" */
+  insert_trusted_list_one?: Maybe<Trusted_List>;
+  /** insert data into the table: "vote" */
+  insert_vote?: Maybe<Vote_Mutation_Response>;
+  /** insert a single row into the table: "vote" */
+  insert_vote_one?: Maybe<Vote>;
   /** update data of the table: "delegation" */
   update_delegation?: Maybe<Delegation_Mutation_Response>;
   /** update single row of the table: "delegation" */
@@ -1263,22 +965,14 @@ export type Mutation_Root = {
   update_token?: Maybe<Token_Mutation_Response>;
   /** update single row of the table: "token" */
   update_token_by_pk?: Maybe<Token>;
-  /** update data of the table: "trustedlist" */
-  update_trustedlist?: Maybe<Trustedlist_Mutation_Response>;
-  /** update single row of the table: "trustedlist" */
-  update_trustedlist_by_pk?: Maybe<Trustedlist>;
-};
-
-
-/** mutation root */
-export type Mutation_RootDelete_CastArgs = {
-  where: Cast_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootDelete_Cast_By_PkArgs = {
-  id: Scalars['Int'];
+  /** update data of the table: "trusted_list" */
+  update_trusted_list?: Maybe<Trusted_List_Mutation_Response>;
+  /** update single row of the table: "trusted_list" */
+  update_trusted_list_by_pk?: Maybe<Trusted_List>;
+  /** update data of the table: "vote" */
+  update_vote?: Maybe<Vote_Mutation_Response>;
+  /** update single row of the table: "vote" */
+  update_vote_by_pk?: Maybe<Vote>;
 };
 
 
@@ -1355,28 +1049,26 @@ export type Mutation_RootDelete_Token_By_PkArgs = {
 
 
 /** mutation root */
-export type Mutation_RootDelete_TrustedlistArgs = {
-  where: Trustedlist_Bool_Exp;
+export type Mutation_RootDelete_Trusted_ListArgs = {
+  where: Trusted_List_Bool_Exp;
 };
 
 
 /** mutation root */
-export type Mutation_RootDelete_Trustedlist_By_PkArgs = {
+export type Mutation_RootDelete_Trusted_List_By_PkArgs = {
   id: Scalars['Int'];
 };
 
 
 /** mutation root */
-export type Mutation_RootInsert_CastArgs = {
-  objects: Array<Cast_Insert_Input>;
-  on_conflict?: InputMaybe<Cast_On_Conflict>;
+export type Mutation_RootDelete_VoteArgs = {
+  where: Vote_Bool_Exp;
 };
 
 
 /** mutation root */
-export type Mutation_RootInsert_Cast_OneArgs = {
-  object: Cast_Insert_Input;
-  on_conflict?: InputMaybe<Cast_On_Conflict>;
+export type Mutation_RootDelete_Vote_By_PkArgs = {
+  id: Scalars['Int'];
 };
 
 
@@ -1465,32 +1157,30 @@ export type Mutation_RootInsert_Token_OneArgs = {
 
 
 /** mutation root */
-export type Mutation_RootInsert_TrustedlistArgs = {
-  objects: Array<Trustedlist_Insert_Input>;
-  on_conflict?: InputMaybe<Trustedlist_On_Conflict>;
+export type Mutation_RootInsert_Trusted_ListArgs = {
+  objects: Array<Trusted_List_Insert_Input>;
+  on_conflict?: InputMaybe<Trusted_List_On_Conflict>;
 };
 
 
 /** mutation root */
-export type Mutation_RootInsert_Trustedlist_OneArgs = {
-  object: Trustedlist_Insert_Input;
-  on_conflict?: InputMaybe<Trustedlist_On_Conflict>;
+export type Mutation_RootInsert_Trusted_List_OneArgs = {
+  object: Trusted_List_Insert_Input;
+  on_conflict?: InputMaybe<Trusted_List_On_Conflict>;
 };
 
 
 /** mutation root */
-export type Mutation_RootUpdate_CastArgs = {
-  _inc?: InputMaybe<Cast_Inc_Input>;
-  _set?: InputMaybe<Cast_Set_Input>;
-  where: Cast_Bool_Exp;
+export type Mutation_RootInsert_VoteArgs = {
+  objects: Array<Vote_Insert_Input>;
+  on_conflict?: InputMaybe<Vote_On_Conflict>;
 };
 
 
 /** mutation root */
-export type Mutation_RootUpdate_Cast_By_PkArgs = {
-  _inc?: InputMaybe<Cast_Inc_Input>;
-  _set?: InputMaybe<Cast_Set_Input>;
-  pk_columns: Cast_Pk_Columns_Input;
+export type Mutation_RootInsert_Vote_OneArgs = {
+  object: Vote_Insert_Input;
+  on_conflict?: InputMaybe<Vote_On_Conflict>;
 };
 
 
@@ -1591,18 +1281,34 @@ export type Mutation_RootUpdate_Token_By_PkArgs = {
 
 
 /** mutation root */
-export type Mutation_RootUpdate_TrustedlistArgs = {
-  _inc?: InputMaybe<Trustedlist_Inc_Input>;
-  _set?: InputMaybe<Trustedlist_Set_Input>;
-  where: Trustedlist_Bool_Exp;
+export type Mutation_RootUpdate_Trusted_ListArgs = {
+  _inc?: InputMaybe<Trusted_List_Inc_Input>;
+  _set?: InputMaybe<Trusted_List_Set_Input>;
+  where: Trusted_List_Bool_Exp;
 };
 
 
 /** mutation root */
-export type Mutation_RootUpdate_Trustedlist_By_PkArgs = {
-  _inc?: InputMaybe<Trustedlist_Inc_Input>;
-  _set?: InputMaybe<Trustedlist_Set_Input>;
-  pk_columns: Trustedlist_Pk_Columns_Input;
+export type Mutation_RootUpdate_Trusted_List_By_PkArgs = {
+  _inc?: InputMaybe<Trusted_List_Inc_Input>;
+  _set?: InputMaybe<Trusted_List_Set_Input>;
+  pk_columns: Trusted_List_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_VoteArgs = {
+  _inc?: InputMaybe<Vote_Inc_Input>;
+  _set?: InputMaybe<Vote_Set_Input>;
+  where: Vote_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Vote_By_PkArgs = {
+  _inc?: InputMaybe<Vote_Inc_Input>;
+  _set?: InputMaybe<Vote_Set_Input>;
+  pk_columns: Vote_Pk_Columns_Input;
 };
 
 /** column ordering options */
@@ -1623,12 +1329,6 @@ export enum Order_By {
 
 export type Query_Root = {
   __typename?: 'query_root';
-  /** fetch data from the table: "cast" */
-  cast: Array<Cast>;
-  /** fetch aggregated fields from the table: "cast" */
-  cast_aggregate: Cast_Aggregate;
-  /** fetch data from the table: "cast" using primary key columns */
-  cast_by_pk?: Maybe<Cast>;
   /** fetch data from the table: "delegation" */
   delegation: Array<Delegation>;
   /** fetch aggregated fields from the table: "delegation" */
@@ -1665,35 +1365,18 @@ export type Query_Root = {
   token_aggregate: Token_Aggregate;
   /** fetch data from the table: "token" using primary key columns */
   token_by_pk?: Maybe<Token>;
-  /** fetch data from the table: "trustedlist" */
-  trustedlist: Array<Trustedlist>;
-  /** fetch aggregated fields from the table: "trustedlist" */
-  trustedlist_aggregate: Trustedlist_Aggregate;
-  /** fetch data from the table: "trustedlist" using primary key columns */
-  trustedlist_by_pk?: Maybe<Trustedlist>;
-};
-
-
-export type Query_RootCastArgs = {
-  distinct_on?: InputMaybe<Array<Cast_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Cast_Order_By>>;
-  where?: InputMaybe<Cast_Bool_Exp>;
-};
-
-
-export type Query_RootCast_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Cast_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Cast_Order_By>>;
-  where?: InputMaybe<Cast_Bool_Exp>;
-};
-
-
-export type Query_RootCast_By_PkArgs = {
-  id: Scalars['Int'];
+  /** fetch data from the table: "trusted_list" */
+  trusted_list: Array<Trusted_List>;
+  /** fetch aggregated fields from the table: "trusted_list" */
+  trusted_list_aggregate: Trusted_List_Aggregate;
+  /** fetch data from the table: "trusted_list" using primary key columns */
+  trusted_list_by_pk?: Maybe<Trusted_List>;
+  /** fetch data from the table: "vote" */
+  vote: Array<Vote>;
+  /** fetch aggregated fields from the table: "vote" */
+  vote_aggregate: Vote_Aggregate;
+  /** fetch data from the table: "vote" using primary key columns */
+  vote_by_pk?: Maybe<Vote>;
 };
 
 
@@ -1835,25 +1518,48 @@ export type Query_RootToken_By_PkArgs = {
 };
 
 
-export type Query_RootTrustedlistArgs = {
-  distinct_on?: InputMaybe<Array<Trustedlist_Select_Column>>;
+export type Query_RootTrusted_ListArgs = {
+  distinct_on?: InputMaybe<Array<Trusted_List_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Trustedlist_Order_By>>;
-  where?: InputMaybe<Trustedlist_Bool_Exp>;
+  order_by?: InputMaybe<Array<Trusted_List_Order_By>>;
+  where?: InputMaybe<Trusted_List_Bool_Exp>;
 };
 
 
-export type Query_RootTrustedlist_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Trustedlist_Select_Column>>;
+export type Query_RootTrusted_List_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Trusted_List_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Trustedlist_Order_By>>;
-  where?: InputMaybe<Trustedlist_Bool_Exp>;
+  order_by?: InputMaybe<Array<Trusted_List_Order_By>>;
+  where?: InputMaybe<Trusted_List_Bool_Exp>;
 };
 
 
-export type Query_RootTrustedlist_By_PkArgs = {
+export type Query_RootTrusted_List_By_PkArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type Query_RootVoteArgs = {
+  distinct_on?: InputMaybe<Array<Vote_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Vote_Order_By>>;
+  where?: InputMaybe<Vote_Bool_Exp>;
+};
+
+
+export type Query_RootVote_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Vote_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Vote_Order_By>>;
+  where?: InputMaybe<Vote_Bool_Exp>;
+};
+
+
+export type Query_RootVote_By_PkArgs = {
   id: Scalars['Int'];
 };
 
@@ -1871,8 +1577,6 @@ export type Question = {
   open_from_round: Scalars['bigint'];
   open_from_time: Scalars['timestamptz'];
   questioner: Scalars['String'];
-  round: Scalars['bigint'];
-  state: Scalars['String'];
   text: Scalars['String'];
   title: Scalars['String'];
   token: Scalars['Int'];
@@ -1918,7 +1622,6 @@ export type Question_Avg_Fields = {
   ending_round?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   open_from_round?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
   token?: Maybe<Scalars['Float']>;
 };
 
@@ -1938,8 +1641,6 @@ export type Question_Bool_Exp = {
   open_from_round?: InputMaybe<Bigint_Comparison_Exp>;
   open_from_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   questioner?: InputMaybe<String_Comparison_Exp>;
-  round?: InputMaybe<Bigint_Comparison_Exp>;
-  state?: InputMaybe<String_Comparison_Exp>;
   text?: InputMaybe<String_Comparison_Exp>;
   title?: InputMaybe<String_Comparison_Exp>;
   token?: InputMaybe<Int_Comparison_Exp>;
@@ -1962,7 +1663,6 @@ export type Question_Inc_Input = {
   ending_round?: InputMaybe<Scalars['bigint']>;
   id?: InputMaybe<Scalars['Int']>;
   open_from_round?: InputMaybe<Scalars['bigint']>;
-  round?: InputMaybe<Scalars['bigint']>;
   token?: InputMaybe<Scalars['Int']>;
 };
 
@@ -1979,8 +1679,6 @@ export type Question_Insert_Input = {
   open_from_round?: InputMaybe<Scalars['bigint']>;
   open_from_time?: InputMaybe<Scalars['timestamptz']>;
   questioner?: InputMaybe<Scalars['String']>;
-  round?: InputMaybe<Scalars['bigint']>;
-  state?: InputMaybe<Scalars['String']>;
   text?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
   token?: InputMaybe<Scalars['Int']>;
@@ -2003,8 +1701,6 @@ export type Question_Max_Fields = {
   open_from_round?: Maybe<Scalars['bigint']>;
   open_from_time?: Maybe<Scalars['timestamptz']>;
   questioner?: Maybe<Scalars['String']>;
-  round?: Maybe<Scalars['bigint']>;
-  state?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   token?: Maybe<Scalars['Int']>;
@@ -2027,8 +1723,6 @@ export type Question_Min_Fields = {
   open_from_round?: Maybe<Scalars['bigint']>;
   open_from_time?: Maybe<Scalars['timestamptz']>;
   questioner?: Maybe<Scalars['String']>;
-  round?: Maybe<Scalars['bigint']>;
-  state?: Maybe<Scalars['String']>;
   text?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   token?: Maybe<Scalars['Int']>;
@@ -2066,8 +1760,6 @@ export type Question_Order_By = {
   open_from_round?: InputMaybe<Order_By>;
   open_from_time?: InputMaybe<Order_By>;
   questioner?: InputMaybe<Order_By>;
-  round?: InputMaybe<Order_By>;
-  state?: InputMaybe<Order_By>;
   text?: InputMaybe<Order_By>;
   title?: InputMaybe<Order_By>;
   token?: InputMaybe<Order_By>;
@@ -2106,10 +1798,6 @@ export enum Question_Select_Column {
   /** column name */
   Questioner = 'questioner',
   /** column name */
-  Round = 'round',
-  /** column name */
-  State = 'state',
-  /** column name */
   Text = 'text',
   /** column name */
   Title = 'title',
@@ -2136,8 +1824,6 @@ export type Question_Set_Input = {
   open_from_round?: InputMaybe<Scalars['bigint']>;
   open_from_time?: InputMaybe<Scalars['timestamptz']>;
   questioner?: InputMaybe<Scalars['String']>;
-  round?: InputMaybe<Scalars['bigint']>;
-  state?: InputMaybe<Scalars['String']>;
   text?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
   token?: InputMaybe<Scalars['Int']>;
@@ -2153,7 +1839,6 @@ export type Question_Stddev_Fields = {
   ending_round?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   open_from_round?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
   token?: Maybe<Scalars['Float']>;
 };
 
@@ -2164,7 +1849,6 @@ export type Question_Stddev_Pop_Fields = {
   ending_round?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   open_from_round?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
   token?: Maybe<Scalars['Float']>;
 };
 
@@ -2175,7 +1859,6 @@ export type Question_Stddev_Samp_Fields = {
   ending_round?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   open_from_round?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
   token?: Maybe<Scalars['Float']>;
 };
 
@@ -2186,7 +1869,6 @@ export type Question_Sum_Fields = {
   ending_round?: Maybe<Scalars['bigint']>;
   id?: Maybe<Scalars['Int']>;
   open_from_round?: Maybe<Scalars['bigint']>;
-  round?: Maybe<Scalars['bigint']>;
   token?: Maybe<Scalars['Int']>;
 };
 
@@ -2215,10 +1897,6 @@ export enum Question_Update_Column {
   /** column name */
   Questioner = 'questioner',
   /** column name */
-  Round = 'round',
-  /** column name */
-  State = 'state',
-  /** column name */
   Text = 'text',
   /** column name */
   Title = 'title',
@@ -2239,7 +1917,6 @@ export type Question_Var_Pop_Fields = {
   ending_round?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   open_from_round?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
   token?: Maybe<Scalars['Float']>;
 };
 
@@ -2250,7 +1927,6 @@ export type Question_Var_Samp_Fields = {
   ending_round?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   open_from_round?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
   token?: Maybe<Scalars['Float']>;
 };
 
@@ -2261,15 +1937,16 @@ export type Question_Variance_Fields = {
   ending_round?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   open_from_round?: Maybe<Scalars['Float']>;
-  round?: Maybe<Scalars['Float']>;
   token?: Maybe<Scalars['Float']>;
 };
 
 /** columns and relationships of "result" */
 export type Result = {
   __typename?: 'result';
+  account: Scalars['String'];
   asa: Scalars['bigint'];
   created_at: Scalars['timestamptz'];
+  encryption_key?: Maybe<Scalars['String']>;
   env: Scalars['String'];
   id: Scalars['Int'];
   json: Scalars['String'];
@@ -2324,8 +2001,10 @@ export type Result_Bool_Exp = {
   _and?: InputMaybe<Array<Result_Bool_Exp>>;
   _not?: InputMaybe<Result_Bool_Exp>;
   _or?: InputMaybe<Array<Result_Bool_Exp>>;
+  account?: InputMaybe<String_Comparison_Exp>;
   asa?: InputMaybe<Bigint_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  encryption_key?: InputMaybe<String_Comparison_Exp>;
   env?: InputMaybe<String_Comparison_Exp>;
   id?: InputMaybe<Int_Comparison_Exp>;
   json?: InputMaybe<String_Comparison_Exp>;
@@ -2339,7 +2018,9 @@ export type Result_Bool_Exp = {
 /** unique or primary key constraints on table "result" */
 export enum Result_Constraint {
   /** unique or primary key constraint */
-  ResultPkey = 'result_pkey'
+  ResultPkey = 'result_pkey',
+  /** unique or primary key constraint */
+  ResultTxKey = 'result_tx_key'
 }
 
 /** input type for incrementing numeric columns in table "result" */
@@ -2352,8 +2033,10 @@ export type Result_Inc_Input = {
 
 /** input type for inserting data into table "result" */
 export type Result_Insert_Input = {
+  account?: InputMaybe<Scalars['String']>;
   asa?: InputMaybe<Scalars['bigint']>;
   created_at?: InputMaybe<Scalars['timestamptz']>;
+  encryption_key?: InputMaybe<Scalars['String']>;
   env?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['Int']>;
   json?: InputMaybe<Scalars['String']>;
@@ -2367,8 +2050,10 @@ export type Result_Insert_Input = {
 /** aggregate max on columns */
 export type Result_Max_Fields = {
   __typename?: 'result_max_fields';
+  account?: Maybe<Scalars['String']>;
   asa?: Maybe<Scalars['bigint']>;
   created_at?: Maybe<Scalars['timestamptz']>;
+  encryption_key?: Maybe<Scalars['String']>;
   env?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   json?: Maybe<Scalars['String']>;
@@ -2382,8 +2067,10 @@ export type Result_Max_Fields = {
 /** aggregate min on columns */
 export type Result_Min_Fields = {
   __typename?: 'result_min_fields';
+  account?: Maybe<Scalars['String']>;
   asa?: Maybe<Scalars['bigint']>;
   created_at?: Maybe<Scalars['timestamptz']>;
+  encryption_key?: Maybe<Scalars['String']>;
   env?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
   json?: Maybe<Scalars['String']>;
@@ -2412,8 +2099,10 @@ export type Result_On_Conflict = {
 
 /** Ordering options when selecting data from "result". */
 export type Result_Order_By = {
+  account?: InputMaybe<Order_By>;
   asa?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
+  encryption_key?: InputMaybe<Order_By>;
   env?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   json?: InputMaybe<Order_By>;
@@ -2432,9 +2121,13 @@ export type Result_Pk_Columns_Input = {
 /** select columns of table "result" */
 export enum Result_Select_Column {
   /** column name */
+  Account = 'account',
+  /** column name */
   Asa = 'asa',
   /** column name */
   CreatedAt = 'created_at',
+  /** column name */
+  EncryptionKey = 'encryption_key',
   /** column name */
   Env = 'env',
   /** column name */
@@ -2455,8 +2148,10 @@ export enum Result_Select_Column {
 
 /** input type for updating data in table "result" */
 export type Result_Set_Input = {
+  account?: InputMaybe<Scalars['String']>;
   asa?: InputMaybe<Scalars['bigint']>;
   created_at?: InputMaybe<Scalars['timestamptz']>;
+  encryption_key?: InputMaybe<Scalars['String']>;
   env?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['Int']>;
   json?: InputMaybe<Scalars['String']>;
@@ -2506,9 +2201,13 @@ export type Result_Sum_Fields = {
 /** update columns of table "result" */
 export enum Result_Update_Column {
   /** column name */
+  Account = 'account',
+  /** column name */
   Asa = 'asa',
   /** column name */
   CreatedAt = 'created_at',
+  /** column name */
+  EncryptionKey = 'encryption_key',
   /** column name */
   Env = 'env',
   /** column name */
@@ -2556,12 +2255,6 @@ export type Result_Variance_Fields = {
 
 export type Subscription_Root = {
   __typename?: 'subscription_root';
-  /** fetch data from the table: "cast" */
-  cast: Array<Cast>;
-  /** fetch aggregated fields from the table: "cast" */
-  cast_aggregate: Cast_Aggregate;
-  /** fetch data from the table: "cast" using primary key columns */
-  cast_by_pk?: Maybe<Cast>;
   /** fetch data from the table: "delegation" */
   delegation: Array<Delegation>;
   /** fetch aggregated fields from the table: "delegation" */
@@ -2598,35 +2291,18 @@ export type Subscription_Root = {
   token_aggregate: Token_Aggregate;
   /** fetch data from the table: "token" using primary key columns */
   token_by_pk?: Maybe<Token>;
-  /** fetch data from the table: "trustedlist" */
-  trustedlist: Array<Trustedlist>;
-  /** fetch aggregated fields from the table: "trustedlist" */
-  trustedlist_aggregate: Trustedlist_Aggregate;
-  /** fetch data from the table: "trustedlist" using primary key columns */
-  trustedlist_by_pk?: Maybe<Trustedlist>;
-};
-
-
-export type Subscription_RootCastArgs = {
-  distinct_on?: InputMaybe<Array<Cast_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Cast_Order_By>>;
-  where?: InputMaybe<Cast_Bool_Exp>;
-};
-
-
-export type Subscription_RootCast_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Cast_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']>;
-  offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Cast_Order_By>>;
-  where?: InputMaybe<Cast_Bool_Exp>;
-};
-
-
-export type Subscription_RootCast_By_PkArgs = {
-  id: Scalars['Int'];
+  /** fetch data from the table: "trusted_list" */
+  trusted_list: Array<Trusted_List>;
+  /** fetch aggregated fields from the table: "trusted_list" */
+  trusted_list_aggregate: Trusted_List_Aggregate;
+  /** fetch data from the table: "trusted_list" using primary key columns */
+  trusted_list_by_pk?: Maybe<Trusted_List>;
+  /** fetch data from the table: "vote" */
+  vote: Array<Vote>;
+  /** fetch aggregated fields from the table: "vote" */
+  vote_aggregate: Vote_Aggregate;
+  /** fetch data from the table: "vote" using primary key columns */
+  vote_by_pk?: Maybe<Vote>;
 };
 
 
@@ -2768,25 +2444,48 @@ export type Subscription_RootToken_By_PkArgs = {
 };
 
 
-export type Subscription_RootTrustedlistArgs = {
-  distinct_on?: InputMaybe<Array<Trustedlist_Select_Column>>;
+export type Subscription_RootTrusted_ListArgs = {
+  distinct_on?: InputMaybe<Array<Trusted_List_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Trustedlist_Order_By>>;
-  where?: InputMaybe<Trustedlist_Bool_Exp>;
+  order_by?: InputMaybe<Array<Trusted_List_Order_By>>;
+  where?: InputMaybe<Trusted_List_Bool_Exp>;
 };
 
 
-export type Subscription_RootTrustedlist_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Trustedlist_Select_Column>>;
+export type Subscription_RootTrusted_List_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Trusted_List_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
   offset?: InputMaybe<Scalars['Int']>;
-  order_by?: InputMaybe<Array<Trustedlist_Order_By>>;
-  where?: InputMaybe<Trustedlist_Bool_Exp>;
+  order_by?: InputMaybe<Array<Trusted_List_Order_By>>;
+  where?: InputMaybe<Trusted_List_Bool_Exp>;
 };
 
 
-export type Subscription_RootTrustedlist_By_PkArgs = {
+export type Subscription_RootTrusted_List_By_PkArgs = {
+  id: Scalars['Int'];
+};
+
+
+export type Subscription_RootVoteArgs = {
+  distinct_on?: InputMaybe<Array<Vote_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Vote_Order_By>>;
+  where?: InputMaybe<Vote_Bool_Exp>;
+};
+
+
+export type Subscription_RootVote_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Vote_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']>;
+  offset?: InputMaybe<Scalars['Int']>;
+  order_by?: InputMaybe<Array<Vote_Order_By>>;
+  where?: InputMaybe<Vote_Bool_Exp>;
+};
+
+
+export type Subscription_RootVote_By_PkArgs = {
   id: Scalars['Int'];
 };
 
@@ -2807,15 +2506,22 @@ export type Timestamptz_Comparison_Exp = {
 export type Token = {
   __typename?: 'token';
   asa: Scalars['bigint'];
+  clawback: Scalars['String'];
   created_at: Scalars['timestamptz'];
+  created_at_round: Scalars['bigint'];
   creator: Scalars['String'];
+  decimals: Scalars['Int'];
   env: Scalars['String'];
-  found_on: Scalars['timestamptz'];
-  icon?: Maybe<Scalars['String']>;
+  freeze: Scalars['String'];
+  icon: Scalars['String'];
   id: Scalars['Int'];
+  manager: Scalars['String'];
   name: Scalars['String'];
+  reserve: Scalars['String'];
+  total: Scalars['bigint'];
   unit: Scalars['String'];
   updated_at: Scalars['timestamptz'];
+  url: Scalars['String'];
 };
 
 /** aggregated selection of "token" */
@@ -2852,7 +2558,10 @@ export type Token_Aggregate_FieldsCountArgs = {
 export type Token_Avg_Fields = {
   __typename?: 'token_avg_fields';
   asa?: Maybe<Scalars['Float']>;
+  created_at_round?: Maybe<Scalars['Float']>;
+  decimals?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
+  total?: Maybe<Scalars['Float']>;
 };
 
 /** Boolean expression to filter rows from the table "token". All fields are combined with a logical 'AND'. */
@@ -2861,19 +2570,28 @@ export type Token_Bool_Exp = {
   _not?: InputMaybe<Token_Bool_Exp>;
   _or?: InputMaybe<Array<Token_Bool_Exp>>;
   asa?: InputMaybe<Bigint_Comparison_Exp>;
+  clawback?: InputMaybe<String_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  created_at_round?: InputMaybe<Bigint_Comparison_Exp>;
   creator?: InputMaybe<String_Comparison_Exp>;
+  decimals?: InputMaybe<Int_Comparison_Exp>;
   env?: InputMaybe<String_Comparison_Exp>;
-  found_on?: InputMaybe<Timestamptz_Comparison_Exp>;
+  freeze?: InputMaybe<String_Comparison_Exp>;
   icon?: InputMaybe<String_Comparison_Exp>;
   id?: InputMaybe<Int_Comparison_Exp>;
+  manager?: InputMaybe<String_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
+  reserve?: InputMaybe<String_Comparison_Exp>;
+  total?: InputMaybe<Bigint_Comparison_Exp>;
   unit?: InputMaybe<String_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  url?: InputMaybe<String_Comparison_Exp>;
 };
 
 /** unique or primary key constraints on table "token" */
 export enum Token_Constraint {
+  /** unique or primary key constraint */
+  TokenAsaEnvKey = 'token_asa_env_key',
   /** unique or primary key constraint */
   TokenPkey = 'token_pkey'
 }
@@ -2881,51 +2599,75 @@ export enum Token_Constraint {
 /** input type for incrementing numeric columns in table "token" */
 export type Token_Inc_Input = {
   asa?: InputMaybe<Scalars['bigint']>;
+  created_at_round?: InputMaybe<Scalars['bigint']>;
+  decimals?: InputMaybe<Scalars['Int']>;
   id?: InputMaybe<Scalars['Int']>;
+  total?: InputMaybe<Scalars['bigint']>;
 };
 
 /** input type for inserting data into table "token" */
 export type Token_Insert_Input = {
   asa?: InputMaybe<Scalars['bigint']>;
+  clawback?: InputMaybe<Scalars['String']>;
   created_at?: InputMaybe<Scalars['timestamptz']>;
+  created_at_round?: InputMaybe<Scalars['bigint']>;
   creator?: InputMaybe<Scalars['String']>;
+  decimals?: InputMaybe<Scalars['Int']>;
   env?: InputMaybe<Scalars['String']>;
-  found_on?: InputMaybe<Scalars['timestamptz']>;
+  freeze?: InputMaybe<Scalars['String']>;
   icon?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['Int']>;
+  manager?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
+  reserve?: InputMaybe<Scalars['String']>;
+  total?: InputMaybe<Scalars['bigint']>;
   unit?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
+  url?: InputMaybe<Scalars['String']>;
 };
 
 /** aggregate max on columns */
 export type Token_Max_Fields = {
   __typename?: 'token_max_fields';
   asa?: Maybe<Scalars['bigint']>;
+  clawback?: Maybe<Scalars['String']>;
   created_at?: Maybe<Scalars['timestamptz']>;
+  created_at_round?: Maybe<Scalars['bigint']>;
   creator?: Maybe<Scalars['String']>;
+  decimals?: Maybe<Scalars['Int']>;
   env?: Maybe<Scalars['String']>;
-  found_on?: Maybe<Scalars['timestamptz']>;
+  freeze?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
+  manager?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
+  reserve?: Maybe<Scalars['String']>;
+  total?: Maybe<Scalars['bigint']>;
   unit?: Maybe<Scalars['String']>;
   updated_at?: Maybe<Scalars['timestamptz']>;
+  url?: Maybe<Scalars['String']>;
 };
 
 /** aggregate min on columns */
 export type Token_Min_Fields = {
   __typename?: 'token_min_fields';
   asa?: Maybe<Scalars['bigint']>;
+  clawback?: Maybe<Scalars['String']>;
   created_at?: Maybe<Scalars['timestamptz']>;
+  created_at_round?: Maybe<Scalars['bigint']>;
   creator?: Maybe<Scalars['String']>;
+  decimals?: Maybe<Scalars['Int']>;
   env?: Maybe<Scalars['String']>;
-  found_on?: Maybe<Scalars['timestamptz']>;
+  freeze?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['Int']>;
+  manager?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
+  reserve?: Maybe<Scalars['String']>;
+  total?: Maybe<Scalars['bigint']>;
   unit?: Maybe<Scalars['String']>;
   updated_at?: Maybe<Scalars['timestamptz']>;
+  url?: Maybe<Scalars['String']>;
 };
 
 /** response of any mutation on the table "token" */
@@ -2947,15 +2689,22 @@ export type Token_On_Conflict = {
 /** Ordering options when selecting data from "token". */
 export type Token_Order_By = {
   asa?: InputMaybe<Order_By>;
+  clawback?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
+  created_at_round?: InputMaybe<Order_By>;
   creator?: InputMaybe<Order_By>;
+  decimals?: InputMaybe<Order_By>;
   env?: InputMaybe<Order_By>;
-  found_on?: InputMaybe<Order_By>;
+  freeze?: InputMaybe<Order_By>;
   icon?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  manager?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
+  reserve?: InputMaybe<Order_By>;
+  total?: InputMaybe<Order_By>;
   unit?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
+  url?: InputMaybe<Order_By>;
 };
 
 /** primary key columns input for table: token */
@@ -2968,65 +2717,98 @@ export enum Token_Select_Column {
   /** column name */
   Asa = 'asa',
   /** column name */
+  Clawback = 'clawback',
+  /** column name */
   CreatedAt = 'created_at',
+  /** column name */
+  CreatedAtRound = 'created_at_round',
   /** column name */
   Creator = 'creator',
   /** column name */
+  Decimals = 'decimals',
+  /** column name */
   Env = 'env',
   /** column name */
-  FoundOn = 'found_on',
+  Freeze = 'freeze',
   /** column name */
   Icon = 'icon',
   /** column name */
   Id = 'id',
   /** column name */
+  Manager = 'manager',
+  /** column name */
   Name = 'name',
+  /** column name */
+  Reserve = 'reserve',
+  /** column name */
+  Total = 'total',
   /** column name */
   Unit = 'unit',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updated_at',
+  /** column name */
+  Url = 'url'
 }
 
 /** input type for updating data in table "token" */
 export type Token_Set_Input = {
   asa?: InputMaybe<Scalars['bigint']>;
+  clawback?: InputMaybe<Scalars['String']>;
   created_at?: InputMaybe<Scalars['timestamptz']>;
+  created_at_round?: InputMaybe<Scalars['bigint']>;
   creator?: InputMaybe<Scalars['String']>;
+  decimals?: InputMaybe<Scalars['Int']>;
   env?: InputMaybe<Scalars['String']>;
-  found_on?: InputMaybe<Scalars['timestamptz']>;
+  freeze?: InputMaybe<Scalars['String']>;
   icon?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['Int']>;
+  manager?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
+  reserve?: InputMaybe<Scalars['String']>;
+  total?: InputMaybe<Scalars['bigint']>;
   unit?: InputMaybe<Scalars['String']>;
   updated_at?: InputMaybe<Scalars['timestamptz']>;
+  url?: InputMaybe<Scalars['String']>;
 };
 
 /** aggregate stddev on columns */
 export type Token_Stddev_Fields = {
   __typename?: 'token_stddev_fields';
   asa?: Maybe<Scalars['Float']>;
+  created_at_round?: Maybe<Scalars['Float']>;
+  decimals?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
+  total?: Maybe<Scalars['Float']>;
 };
 
 /** aggregate stddev_pop on columns */
 export type Token_Stddev_Pop_Fields = {
   __typename?: 'token_stddev_pop_fields';
   asa?: Maybe<Scalars['Float']>;
+  created_at_round?: Maybe<Scalars['Float']>;
+  decimals?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
+  total?: Maybe<Scalars['Float']>;
 };
 
 /** aggregate stddev_samp on columns */
 export type Token_Stddev_Samp_Fields = {
   __typename?: 'token_stddev_samp_fields';
   asa?: Maybe<Scalars['Float']>;
+  created_at_round?: Maybe<Scalars['Float']>;
+  decimals?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
+  total?: Maybe<Scalars['Float']>;
 };
 
 /** aggregate sum on columns */
 export type Token_Sum_Fields = {
   __typename?: 'token_sum_fields';
   asa?: Maybe<Scalars['bigint']>;
+  created_at_round?: Maybe<Scalars['bigint']>;
+  decimals?: Maybe<Scalars['Int']>;
   id?: Maybe<Scalars['Int']>;
+  total?: Maybe<Scalars['bigint']>;
 };
 
 /** update columns of table "token" */
@@ -3034,49 +2816,72 @@ export enum Token_Update_Column {
   /** column name */
   Asa = 'asa',
   /** column name */
+  Clawback = 'clawback',
+  /** column name */
   CreatedAt = 'created_at',
+  /** column name */
+  CreatedAtRound = 'created_at_round',
   /** column name */
   Creator = 'creator',
   /** column name */
+  Decimals = 'decimals',
+  /** column name */
   Env = 'env',
   /** column name */
-  FoundOn = 'found_on',
+  Freeze = 'freeze',
   /** column name */
   Icon = 'icon',
   /** column name */
   Id = 'id',
   /** column name */
+  Manager = 'manager',
+  /** column name */
   Name = 'name',
+  /** column name */
+  Reserve = 'reserve',
+  /** column name */
+  Total = 'total',
   /** column name */
   Unit = 'unit',
   /** column name */
-  UpdatedAt = 'updated_at'
+  UpdatedAt = 'updated_at',
+  /** column name */
+  Url = 'url'
 }
 
 /** aggregate var_pop on columns */
 export type Token_Var_Pop_Fields = {
   __typename?: 'token_var_pop_fields';
   asa?: Maybe<Scalars['Float']>;
+  created_at_round?: Maybe<Scalars['Float']>;
+  decimals?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
+  total?: Maybe<Scalars['Float']>;
 };
 
 /** aggregate var_samp on columns */
 export type Token_Var_Samp_Fields = {
   __typename?: 'token_var_samp_fields';
   asa?: Maybe<Scalars['Float']>;
+  created_at_round?: Maybe<Scalars['Float']>;
+  decimals?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
+  total?: Maybe<Scalars['Float']>;
 };
 
 /** aggregate variance on columns */
 export type Token_Variance_Fields = {
   __typename?: 'token_variance_fields';
   asa?: Maybe<Scalars['Float']>;
+  created_at_round?: Maybe<Scalars['Float']>;
+  decimals?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
+  total?: Maybe<Scalars['Float']>;
 };
 
-/** columns and relationships of "trustedlist" */
-export type Trustedlist = {
-  __typename?: 'trustedlist';
+/** columns and relationships of "trusted_list" */
+export type Trusted_List = {
+  __typename?: 'trusted_list';
   account: Scalars['String'];
   asa: Scalars['bigint'];
   created_at: Scalars['timestamptz'];
@@ -3089,50 +2894,50 @@ export type Trustedlist = {
   updated_at: Scalars['timestamptz'];
 };
 
-/** aggregated selection of "trustedlist" */
-export type Trustedlist_Aggregate = {
-  __typename?: 'trustedlist_aggregate';
-  aggregate?: Maybe<Trustedlist_Aggregate_Fields>;
-  nodes: Array<Trustedlist>;
+/** aggregated selection of "trusted_list" */
+export type Trusted_List_Aggregate = {
+  __typename?: 'trusted_list_aggregate';
+  aggregate?: Maybe<Trusted_List_Aggregate_Fields>;
+  nodes: Array<Trusted_List>;
 };
 
-/** aggregate fields of "trustedlist" */
-export type Trustedlist_Aggregate_Fields = {
-  __typename?: 'trustedlist_aggregate_fields';
-  avg?: Maybe<Trustedlist_Avg_Fields>;
+/** aggregate fields of "trusted_list" */
+export type Trusted_List_Aggregate_Fields = {
+  __typename?: 'trusted_list_aggregate_fields';
+  avg?: Maybe<Trusted_List_Avg_Fields>;
   count: Scalars['Int'];
-  max?: Maybe<Trustedlist_Max_Fields>;
-  min?: Maybe<Trustedlist_Min_Fields>;
-  stddev?: Maybe<Trustedlist_Stddev_Fields>;
-  stddev_pop?: Maybe<Trustedlist_Stddev_Pop_Fields>;
-  stddev_samp?: Maybe<Trustedlist_Stddev_Samp_Fields>;
-  sum?: Maybe<Trustedlist_Sum_Fields>;
-  var_pop?: Maybe<Trustedlist_Var_Pop_Fields>;
-  var_samp?: Maybe<Trustedlist_Var_Samp_Fields>;
-  variance?: Maybe<Trustedlist_Variance_Fields>;
+  max?: Maybe<Trusted_List_Max_Fields>;
+  min?: Maybe<Trusted_List_Min_Fields>;
+  stddev?: Maybe<Trusted_List_Stddev_Fields>;
+  stddev_pop?: Maybe<Trusted_List_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Trusted_List_Stddev_Samp_Fields>;
+  sum?: Maybe<Trusted_List_Sum_Fields>;
+  var_pop?: Maybe<Trusted_List_Var_Pop_Fields>;
+  var_samp?: Maybe<Trusted_List_Var_Samp_Fields>;
+  variance?: Maybe<Trusted_List_Variance_Fields>;
 };
 
 
-/** aggregate fields of "trustedlist" */
-export type Trustedlist_Aggregate_FieldsCountArgs = {
-  columns?: InputMaybe<Array<Trustedlist_Select_Column>>;
+/** aggregate fields of "trusted_list" */
+export type Trusted_List_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Trusted_List_Select_Column>>;
   distinct?: InputMaybe<Scalars['Boolean']>;
 };
 
 /** aggregate avg on columns */
-export type Trustedlist_Avg_Fields = {
-  __typename?: 'trustedlist_avg_fields';
+export type Trusted_List_Avg_Fields = {
+  __typename?: 'trusted_list_avg_fields';
   asa?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   round?: Maybe<Scalars['Float']>;
   token?: Maybe<Scalars['Float']>;
 };
 
-/** Boolean expression to filter rows from the table "trustedlist". All fields are combined with a logical 'AND'. */
-export type Trustedlist_Bool_Exp = {
-  _and?: InputMaybe<Array<Trustedlist_Bool_Exp>>;
-  _not?: InputMaybe<Trustedlist_Bool_Exp>;
-  _or?: InputMaybe<Array<Trustedlist_Bool_Exp>>;
+/** Boolean expression to filter rows from the table "trusted_list". All fields are combined with a logical 'AND'. */
+export type Trusted_List_Bool_Exp = {
+  _and?: InputMaybe<Array<Trusted_List_Bool_Exp>>;
+  _not?: InputMaybe<Trusted_List_Bool_Exp>;
+  _or?: InputMaybe<Array<Trusted_List_Bool_Exp>>;
   account?: InputMaybe<String_Comparison_Exp>;
   asa?: InputMaybe<Bigint_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
@@ -3145,22 +2950,24 @@ export type Trustedlist_Bool_Exp = {
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
 };
 
-/** unique or primary key constraints on table "trustedlist" */
-export enum Trustedlist_Constraint {
+/** unique or primary key constraints on table "trusted_list" */
+export enum Trusted_List_Constraint {
   /** unique or primary key constraint */
-  TrustedlistPkey = 'trustedlist_pkey'
+  TrustedListPkey = 'trusted_list_pkey',
+  /** unique or primary key constraint */
+  TrustedListTxKey = 'trusted_list_tx_key'
 }
 
-/** input type for incrementing numeric columns in table "trustedlist" */
-export type Trustedlist_Inc_Input = {
+/** input type for incrementing numeric columns in table "trusted_list" */
+export type Trusted_List_Inc_Input = {
   asa?: InputMaybe<Scalars['bigint']>;
   id?: InputMaybe<Scalars['Int']>;
   round?: InputMaybe<Scalars['bigint']>;
   token?: InputMaybe<Scalars['Int']>;
 };
 
-/** input type for inserting data into table "trustedlist" */
-export type Trustedlist_Insert_Input = {
+/** input type for inserting data into table "trusted_list" */
+export type Trusted_List_Insert_Input = {
   account?: InputMaybe<Scalars['String']>;
   asa?: InputMaybe<Scalars['bigint']>;
   created_at?: InputMaybe<Scalars['timestamptz']>;
@@ -3174,8 +2981,8 @@ export type Trustedlist_Insert_Input = {
 };
 
 /** aggregate max on columns */
-export type Trustedlist_Max_Fields = {
-  __typename?: 'trustedlist_max_fields';
+export type Trusted_List_Max_Fields = {
+  __typename?: 'trusted_list_max_fields';
   account?: Maybe<Scalars['String']>;
   asa?: Maybe<Scalars['bigint']>;
   created_at?: Maybe<Scalars['timestamptz']>;
@@ -3189,8 +2996,8 @@ export type Trustedlist_Max_Fields = {
 };
 
 /** aggregate min on columns */
-export type Trustedlist_Min_Fields = {
-  __typename?: 'trustedlist_min_fields';
+export type Trusted_List_Min_Fields = {
+  __typename?: 'trusted_list_min_fields';
   account?: Maybe<Scalars['String']>;
   asa?: Maybe<Scalars['bigint']>;
   created_at?: Maybe<Scalars['timestamptz']>;
@@ -3203,24 +3010,24 @@ export type Trustedlist_Min_Fields = {
   updated_at?: Maybe<Scalars['timestamptz']>;
 };
 
-/** response of any mutation on the table "trustedlist" */
-export type Trustedlist_Mutation_Response = {
-  __typename?: 'trustedlist_mutation_response';
+/** response of any mutation on the table "trusted_list" */
+export type Trusted_List_Mutation_Response = {
+  __typename?: 'trusted_list_mutation_response';
   /** number of rows affected by the mutation */
   affected_rows: Scalars['Int'];
   /** data from the rows affected by the mutation */
-  returning: Array<Trustedlist>;
+  returning: Array<Trusted_List>;
 };
 
-/** on_conflict condition type for table "trustedlist" */
-export type Trustedlist_On_Conflict = {
-  constraint: Trustedlist_Constraint;
-  update_columns?: Array<Trustedlist_Update_Column>;
-  where?: InputMaybe<Trustedlist_Bool_Exp>;
+/** on_conflict condition type for table "trusted_list" */
+export type Trusted_List_On_Conflict = {
+  constraint: Trusted_List_Constraint;
+  update_columns?: Array<Trusted_List_Update_Column>;
+  where?: InputMaybe<Trusted_List_Bool_Exp>;
 };
 
-/** Ordering options when selecting data from "trustedlist". */
-export type Trustedlist_Order_By = {
+/** Ordering options when selecting data from "trusted_list". */
+export type Trusted_List_Order_By = {
   account?: InputMaybe<Order_By>;
   asa?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
@@ -3233,13 +3040,13 @@ export type Trustedlist_Order_By = {
   updated_at?: InputMaybe<Order_By>;
 };
 
-/** primary key columns input for table: trustedlist */
-export type Trustedlist_Pk_Columns_Input = {
+/** primary key columns input for table: trusted_list */
+export type Trusted_List_Pk_Columns_Input = {
   id: Scalars['Int'];
 };
 
-/** select columns of table "trustedlist" */
-export enum Trustedlist_Select_Column {
+/** select columns of table "trusted_list" */
+export enum Trusted_List_Select_Column {
   /** column name */
   Account = 'account',
   /** column name */
@@ -3262,8 +3069,8 @@ export enum Trustedlist_Select_Column {
   UpdatedAt = 'updated_at'
 }
 
-/** input type for updating data in table "trustedlist" */
-export type Trustedlist_Set_Input = {
+/** input type for updating data in table "trusted_list" */
+export type Trusted_List_Set_Input = {
   account?: InputMaybe<Scalars['String']>;
   asa?: InputMaybe<Scalars['bigint']>;
   created_at?: InputMaybe<Scalars['timestamptz']>;
@@ -3277,8 +3084,8 @@ export type Trustedlist_Set_Input = {
 };
 
 /** aggregate stddev on columns */
-export type Trustedlist_Stddev_Fields = {
-  __typename?: 'trustedlist_stddev_fields';
+export type Trusted_List_Stddev_Fields = {
+  __typename?: 'trusted_list_stddev_fields';
   asa?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   round?: Maybe<Scalars['Float']>;
@@ -3286,8 +3093,8 @@ export type Trustedlist_Stddev_Fields = {
 };
 
 /** aggregate stddev_pop on columns */
-export type Trustedlist_Stddev_Pop_Fields = {
-  __typename?: 'trustedlist_stddev_pop_fields';
+export type Trusted_List_Stddev_Pop_Fields = {
+  __typename?: 'trusted_list_stddev_pop_fields';
   asa?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   round?: Maybe<Scalars['Float']>;
@@ -3295,8 +3102,8 @@ export type Trustedlist_Stddev_Pop_Fields = {
 };
 
 /** aggregate stddev_samp on columns */
-export type Trustedlist_Stddev_Samp_Fields = {
-  __typename?: 'trustedlist_stddev_samp_fields';
+export type Trusted_List_Stddev_Samp_Fields = {
+  __typename?: 'trusted_list_stddev_samp_fields';
   asa?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   round?: Maybe<Scalars['Float']>;
@@ -3304,16 +3111,16 @@ export type Trustedlist_Stddev_Samp_Fields = {
 };
 
 /** aggregate sum on columns */
-export type Trustedlist_Sum_Fields = {
-  __typename?: 'trustedlist_sum_fields';
+export type Trusted_List_Sum_Fields = {
+  __typename?: 'trusted_list_sum_fields';
   asa?: Maybe<Scalars['bigint']>;
   id?: Maybe<Scalars['Int']>;
   round?: Maybe<Scalars['bigint']>;
   token?: Maybe<Scalars['Int']>;
 };
 
-/** update columns of table "trustedlist" */
-export enum Trustedlist_Update_Column {
+/** update columns of table "trusted_list" */
+export enum Trusted_List_Update_Column {
   /** column name */
   Account = 'account',
   /** column name */
@@ -3337,8 +3144,8 @@ export enum Trustedlist_Update_Column {
 }
 
 /** aggregate var_pop on columns */
-export type Trustedlist_Var_Pop_Fields = {
-  __typename?: 'trustedlist_var_pop_fields';
+export type Trusted_List_Var_Pop_Fields = {
+  __typename?: 'trusted_list_var_pop_fields';
   asa?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   round?: Maybe<Scalars['Float']>;
@@ -3346,8 +3153,8 @@ export type Trustedlist_Var_Pop_Fields = {
 };
 
 /** aggregate var_samp on columns */
-export type Trustedlist_Var_Samp_Fields = {
-  __typename?: 'trustedlist_var_samp_fields';
+export type Trusted_List_Var_Samp_Fields = {
+  __typename?: 'trusted_list_var_samp_fields';
   asa?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   round?: Maybe<Scalars['Float']>;
@@ -3355,8 +3162,310 @@ export type Trustedlist_Var_Samp_Fields = {
 };
 
 /** aggregate variance on columns */
-export type Trustedlist_Variance_Fields = {
-  __typename?: 'trustedlist_variance_fields';
+export type Trusted_List_Variance_Fields = {
+  __typename?: 'trusted_list_variance_fields';
+  asa?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['Float']>;
+  round?: Maybe<Scalars['Float']>;
+  token?: Maybe<Scalars['Float']>;
+};
+
+/** columns and relationships of "vote" */
+export type Vote = {
+  __typename?: 'vote';
+  address: Scalars['String'];
+  asa: Scalars['bigint'];
+  created_at: Scalars['timestamptz'];
+  env: Scalars['String'];
+  id: Scalars['Int'];
+  json: Scalars['String'];
+  questiontx?: Maybe<Scalars['String']>;
+  round: Scalars['bigint'];
+  token: Scalars['Int'];
+  tx: Scalars['String'];
+  updated_at: Scalars['timestamptz'];
+};
+
+/** aggregated selection of "vote" */
+export type Vote_Aggregate = {
+  __typename?: 'vote_aggregate';
+  aggregate?: Maybe<Vote_Aggregate_Fields>;
+  nodes: Array<Vote>;
+};
+
+/** aggregate fields of "vote" */
+export type Vote_Aggregate_Fields = {
+  __typename?: 'vote_aggregate_fields';
+  avg?: Maybe<Vote_Avg_Fields>;
+  count: Scalars['Int'];
+  max?: Maybe<Vote_Max_Fields>;
+  min?: Maybe<Vote_Min_Fields>;
+  stddev?: Maybe<Vote_Stddev_Fields>;
+  stddev_pop?: Maybe<Vote_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Vote_Stddev_Samp_Fields>;
+  sum?: Maybe<Vote_Sum_Fields>;
+  var_pop?: Maybe<Vote_Var_Pop_Fields>;
+  var_samp?: Maybe<Vote_Var_Samp_Fields>;
+  variance?: Maybe<Vote_Variance_Fields>;
+};
+
+
+/** aggregate fields of "vote" */
+export type Vote_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Vote_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']>;
+};
+
+/** aggregate avg on columns */
+export type Vote_Avg_Fields = {
+  __typename?: 'vote_avg_fields';
+  asa?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['Float']>;
+  round?: Maybe<Scalars['Float']>;
+  token?: Maybe<Scalars['Float']>;
+};
+
+/** Boolean expression to filter rows from the table "vote". All fields are combined with a logical 'AND'. */
+export type Vote_Bool_Exp = {
+  _and?: InputMaybe<Array<Vote_Bool_Exp>>;
+  _not?: InputMaybe<Vote_Bool_Exp>;
+  _or?: InputMaybe<Array<Vote_Bool_Exp>>;
+  address?: InputMaybe<String_Comparison_Exp>;
+  asa?: InputMaybe<Bigint_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  env?: InputMaybe<String_Comparison_Exp>;
+  id?: InputMaybe<Int_Comparison_Exp>;
+  json?: InputMaybe<String_Comparison_Exp>;
+  questiontx?: InputMaybe<String_Comparison_Exp>;
+  round?: InputMaybe<Bigint_Comparison_Exp>;
+  token?: InputMaybe<Int_Comparison_Exp>;
+  tx?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "vote" */
+export enum Vote_Constraint {
+  /** unique or primary key constraint */
+  VotePkey = 'vote_pkey',
+  /** unique or primary key constraint */
+  VoteTxKey = 'vote_tx_key'
+}
+
+/** input type for incrementing numeric columns in table "vote" */
+export type Vote_Inc_Input = {
+  asa?: InputMaybe<Scalars['bigint']>;
+  id?: InputMaybe<Scalars['Int']>;
+  round?: InputMaybe<Scalars['bigint']>;
+  token?: InputMaybe<Scalars['Int']>;
+};
+
+/** input type for inserting data into table "vote" */
+export type Vote_Insert_Input = {
+  address?: InputMaybe<Scalars['String']>;
+  asa?: InputMaybe<Scalars['bigint']>;
+  created_at?: InputMaybe<Scalars['timestamptz']>;
+  env?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['Int']>;
+  json?: InputMaybe<Scalars['String']>;
+  questiontx?: InputMaybe<Scalars['String']>;
+  round?: InputMaybe<Scalars['bigint']>;
+  token?: InputMaybe<Scalars['Int']>;
+  tx?: InputMaybe<Scalars['String']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate max on columns */
+export type Vote_Max_Fields = {
+  __typename?: 'vote_max_fields';
+  address?: Maybe<Scalars['String']>;
+  asa?: Maybe<Scalars['bigint']>;
+  created_at?: Maybe<Scalars['timestamptz']>;
+  env?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['Int']>;
+  json?: Maybe<Scalars['String']>;
+  questiontx?: Maybe<Scalars['String']>;
+  round?: Maybe<Scalars['bigint']>;
+  token?: Maybe<Scalars['Int']>;
+  tx?: Maybe<Scalars['String']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
+};
+
+/** aggregate min on columns */
+export type Vote_Min_Fields = {
+  __typename?: 'vote_min_fields';
+  address?: Maybe<Scalars['String']>;
+  asa?: Maybe<Scalars['bigint']>;
+  created_at?: Maybe<Scalars['timestamptz']>;
+  env?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['Int']>;
+  json?: Maybe<Scalars['String']>;
+  questiontx?: Maybe<Scalars['String']>;
+  round?: Maybe<Scalars['bigint']>;
+  token?: Maybe<Scalars['Int']>;
+  tx?: Maybe<Scalars['String']>;
+  updated_at?: Maybe<Scalars['timestamptz']>;
+};
+
+/** response of any mutation on the table "vote" */
+export type Vote_Mutation_Response = {
+  __typename?: 'vote_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Vote>;
+};
+
+/** on_conflict condition type for table "vote" */
+export type Vote_On_Conflict = {
+  constraint: Vote_Constraint;
+  update_columns?: Array<Vote_Update_Column>;
+  where?: InputMaybe<Vote_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "vote". */
+export type Vote_Order_By = {
+  address?: InputMaybe<Order_By>;
+  asa?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  env?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  json?: InputMaybe<Order_By>;
+  questiontx?: InputMaybe<Order_By>;
+  round?: InputMaybe<Order_By>;
+  token?: InputMaybe<Order_By>;
+  tx?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: vote */
+export type Vote_Pk_Columns_Input = {
+  id: Scalars['Int'];
+};
+
+/** select columns of table "vote" */
+export enum Vote_Select_Column {
+  /** column name */
+  Address = 'address',
+  /** column name */
+  Asa = 'asa',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Env = 'env',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Json = 'json',
+  /** column name */
+  Questiontx = 'questiontx',
+  /** column name */
+  Round = 'round',
+  /** column name */
+  Token = 'token',
+  /** column name */
+  Tx = 'tx',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "vote" */
+export type Vote_Set_Input = {
+  address?: InputMaybe<Scalars['String']>;
+  asa?: InputMaybe<Scalars['bigint']>;
+  created_at?: InputMaybe<Scalars['timestamptz']>;
+  env?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['Int']>;
+  json?: InputMaybe<Scalars['String']>;
+  questiontx?: InputMaybe<Scalars['String']>;
+  round?: InputMaybe<Scalars['bigint']>;
+  token?: InputMaybe<Scalars['Int']>;
+  tx?: InputMaybe<Scalars['String']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']>;
+};
+
+/** aggregate stddev on columns */
+export type Vote_Stddev_Fields = {
+  __typename?: 'vote_stddev_fields';
+  asa?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['Float']>;
+  round?: Maybe<Scalars['Float']>;
+  token?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Vote_Stddev_Pop_Fields = {
+  __typename?: 'vote_stddev_pop_fields';
+  asa?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['Float']>;
+  round?: Maybe<Scalars['Float']>;
+  token?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Vote_Stddev_Samp_Fields = {
+  __typename?: 'vote_stddev_samp_fields';
+  asa?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['Float']>;
+  round?: Maybe<Scalars['Float']>;
+  token?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate sum on columns */
+export type Vote_Sum_Fields = {
+  __typename?: 'vote_sum_fields';
+  asa?: Maybe<Scalars['bigint']>;
+  id?: Maybe<Scalars['Int']>;
+  round?: Maybe<Scalars['bigint']>;
+  token?: Maybe<Scalars['Int']>;
+};
+
+/** update columns of table "vote" */
+export enum Vote_Update_Column {
+  /** column name */
+  Address = 'address',
+  /** column name */
+  Asa = 'asa',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Env = 'env',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Json = 'json',
+  /** column name */
+  Questiontx = 'questiontx',
+  /** column name */
+  Round = 'round',
+  /** column name */
+  Token = 'token',
+  /** column name */
+  Tx = 'tx',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** aggregate var_pop on columns */
+export type Vote_Var_Pop_Fields = {
+  __typename?: 'vote_var_pop_fields';
+  asa?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['Float']>;
+  round?: Maybe<Scalars['Float']>;
+  token?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate var_samp on columns */
+export type Vote_Var_Samp_Fields = {
+  __typename?: 'vote_var_samp_fields';
+  asa?: Maybe<Scalars['Float']>;
+  id?: Maybe<Scalars['Float']>;
+  round?: Maybe<Scalars['Float']>;
+  token?: Maybe<Scalars['Float']>;
+};
+
+/** aggregate variance on columns */
+export type Vote_Variance_Fields = {
+  __typename?: 'vote_variance_fields';
   asa?: Maybe<Scalars['Float']>;
   id?: Maybe<Scalars['Float']>;
   round?: Maybe<Scalars['Float']>;

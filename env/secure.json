@@ -1,0 +1,22 @@
+{
+  "indexerId": 1,
+  "mn": "",
+  "authGenesisID": "mainnet-v1.0",
+  "authGenesisHash": "wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=",
+  "authRealm": "",
+  "graphQLServer": "https://graphql.vote-coin.com/v1/graphql",
+  "algod": {
+    "host": "https://mainnet-algorand.api.purestake.io/ps2",
+    "port": 443,
+    "header": "x-api-key",
+    "token": "",
+    "delay": 1000
+  },
+  "indexer": {
+    "host": "https://mainnet-algorand.api.purestake.io/idx2",
+    "port": 443,
+    "header": "x-api-key",
+    "token": "",
+    "delay": 1000
+  }
+}
