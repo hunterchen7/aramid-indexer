@@ -42,7 +42,7 @@ const main = async () => {
       //console.log('block.block', block.block);
       if (block.block.txns) {
         let countProcessedTxns = 0;
-        console.log('block.block.txns', block.block.txns.length);
+        //console.log('block.block.txns', block.block.txns.length);
         for (const stxn of block.block.txns) {
           countProcessedTxns++;
           try {
@@ -89,7 +89,7 @@ const main = async () => {
             logger.error(e);
           }
         }
-        logger.info(`${countProcessedTxns} txns processed with round ${round}`);
+        logger.debug(`${countProcessedTxns} txns processed with round ${round}`);
       }
       if (checkOneBlock) break;
       round = round + 1;
