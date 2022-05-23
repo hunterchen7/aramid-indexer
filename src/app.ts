@@ -2,6 +2,7 @@ import algosdk from 'algosdk';
 import getAlgodClient from './algo/getAlgodClient';
 import computeTransactionId from './algo/computeTransactionId';
 import getLogger from './common/getLogger';
+import processQuestionV1 from './process/questionV1';
 import processQuestionV2 from './process/questionV2';
 import processDelegationV1 from './process/delegationV1';
 import processEtgV1 from './process/etgV1';
@@ -19,9 +20,10 @@ const main = async () => {
     logger.info('App started');
     const config = getSecureConfiguration();
     let round = await getLatestRound(config.indexerId);
-    const saveRound = true;
-    const checkOneBlock = false;
-    //round = 20933438;
+    let saveRound = true;
+    const checkOneBlock = true;
+    if (checkOneBlock) saveRound = false;
+    round = 15986363;
     logger.debug(`starting at round ${round}`);
     logger.debug(`before getAlgodClient`);
     const client = getAlgodClient();
@@ -67,6 +69,9 @@ const main = async () => {
             //console.log(dataStr)
             const data: any = JSON.parse(dataStr);
             switch (messageType) {
+              case 'avote-question/v1':
+                await processQuestionV1(data, confirmedRound, stxn, block.block);
+                break;
               case 'avote-question/v2':
                 await processQuestionV2(data, confirmedRound, stxn, block.block);
                 break;

@@ -17,6 +17,7 @@ const query = gql`
 `;
 const insertDelegation = async (item: Delegation) => {
   const client = getApolloClient();
+  console.log('inserting Delegation', item);
   return await client.mutate({
     mutation: query,
     variables: {

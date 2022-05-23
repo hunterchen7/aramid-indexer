@@ -49,6 +49,7 @@ const query = gql`
 `;
 const insertQuestion = async (question: Question) => {
   const client = getApolloClient();
+  console.log('inserting question', question);
 
   return await client.mutate({
     mutation: query,

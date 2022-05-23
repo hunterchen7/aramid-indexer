@@ -48,6 +48,7 @@ const query = gql`
 `;
 const insertToken = async (token: Token) => {
   const client = getApolloClient();
+  console.log('inserting token', token);
   return await client.mutate({
     mutation: query,
     variables: {

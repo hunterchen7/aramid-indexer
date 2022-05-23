@@ -6,21 +6,18 @@ import { Vote } from '../generated/graphql';
 import getToken from '../repository/getToken';
 import createToken from './createToken';
 import moment from 'moment';
+import getTokenId from './getTokenId';
+import getAsaId from './getAsaId';
 
 const processVoteV1 = async (data: VoteEncV1, round: number, stxn: any, block: any) => {
   const txId = computeTransactionId(block.gh, block.gen, stxn);
 
-  let tokenId = await getToken(stxn.txn.xaid, stxn.txn.gen);
-  console.log('token', tokenId);
-  if (!tokenId) {
-    await createToken(stxn.txn.xaid, stxn.txn.gen);
-    tokenId = await getToken(stxn.txn.xaid, stxn.txn.gen);
-  }
-
+  const tokenId = await getTokenId(stxn);
+  const asa = getAsaId(stxn);
   const publish: Vote = {
     tx: txId,
     address: algosdk.encodeAddress(stxn.txn.snd),
-    asa: stxn.txn.xaid,
+    asa: asa,
     env: stxn.txn.gen,
     json: JSON.stringify(data),
     questiontx: data.q ?? '',

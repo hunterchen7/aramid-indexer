@@ -17,6 +17,7 @@ const query = gql`
 `;
 const insertResult = async (item: Result) => {
   const client = getApolloClient();
+  console.log('inserting result', item);
   return await client.mutate({
     mutation: query,
     variables: {

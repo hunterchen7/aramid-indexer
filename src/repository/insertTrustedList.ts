@@ -17,6 +17,7 @@ const query = gql`
 `;
 const insertTrustedList = async (item: Trusted_List) => {
   const client = getApolloClient();
+  console.log('inserting Trusted_List', item);
   return await client.mutate({
     mutation: query,
     variables: {

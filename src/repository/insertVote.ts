@@ -17,6 +17,7 @@ const query = gql`
 `;
 const insertVote = async (vote: Vote) => {
   const client = getApolloClient();
+  console.log('inserting vote', vote);
   return await client.mutate({
     mutation: query,
     variables: {

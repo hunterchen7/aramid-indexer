@@ -6,21 +6,18 @@ import { Result } from '../generated/graphql';
 import getToken from '../repository/getToken';
 import createToken from './createToken';
 import moment from 'moment';
+import getTokenId from './getTokenId';
+import getAsaId from './getAsaId';
 
 const processResultV1 = async (data: ResultV1, round: number, stxn: any, block: any) => {
   const txId = computeTransactionId(block.gh, block.gen, stxn);
 
-  let tokenId = await getToken(stxn.txn.xaid, stxn.txn.gen);
-  console.log('token', tokenId);
-  if (!tokenId) {
-    await createToken(stxn.txn.xaid, stxn.txn.gen);
-    tokenId = await getToken(stxn.txn.xaid, stxn.txn.gen);
-  }
-
+  const tokenId = await getTokenId(stxn);
+  const asa = getAsaId(stxn);
   const publish: Result = {
     tx: txId,
     account: algosdk.encodeAddress(stxn.txn.snd),
-    asa: stxn.txn.xaid,
+    asa: asa,
     env: stxn.txn.gen,
     json: JSON.stringify(data),
     round: round,
