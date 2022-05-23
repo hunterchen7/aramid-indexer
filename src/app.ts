@@ -33,7 +33,7 @@ const main = async () => {
     while (true) {
       logger.debug(`processing round ${round}`);
       if (round % 100 == 0) {
-        logger.debug(`processing round ${round}`);
+        logger.info(`processing round ${round}`);
       }
       const confirmedRound = round;
       logger.debug(`before statusAfterBlock ${round}`);
