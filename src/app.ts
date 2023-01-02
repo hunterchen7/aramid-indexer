@@ -4,16 +4,13 @@ import computeTransactionId from './algo/computeTransactionId';
 import getLogger from './common/getLogger';
 import processQuestionV1 from './process/questionV1';
 import processQuestionV2 from './process/questionV2';
-import processDelegationV1 from './process/delegationV1';
-import processEtgV1 from './process/etgV1';
-import processVoteV1 from './process/voteV1';
-import processResultV1 from './process/resultV1';
-import processTrustedListV1 from './process/trustedListV1';
 import setLatestRound from './repository/setLatestRound';
 import getLatestRound from './repository/getLatestRound';
 import asyncDelay from './common/asyncDelay';
 import getSecureConfiguration from './common/getSecureConfiguration';
 import tellK8SSuccessState from './common/tellK8SSuccessState';
+import processVoteV1 from './process/voteEncV1';
+import processTransaction from './process/transaction';
 const main = async () => {
   const logger = getLogger();
   try {
@@ -69,30 +66,12 @@ const main = async () => {
             //console.log(dataStr)
             const data: any = JSON.parse(dataStr);
             switch (messageType) {
-              case 'avote-question/v1':
-                await processQuestionV1(data, confirmedRound, stxn, block.block);
+              case 'aramid-proof/v1':
+                await processTransaction(data, confirmedRound, stxn, block.block);
                 break;
-              case 'avote-question/v2':
-                await processQuestionV2(data, confirmedRound, stxn, block.block);
-                break;
-              case 'avote-vote/v1':
-                await processVoteV1(data, confirmedRound, stxn, block.block);
-                break;
-              case 'avote-vote-enc/v1':
-                await processVoteV1(data, confirmedRound, stxn, block.block);
-                break;
-              case 'avote-delegation/v1':
-                await processDelegationV1(data, confirmedRound, stxn, block.block);
-                break;
-              case 'avote-etg/v1':
-                await processEtgV1(data, confirmedRound, stxn, block.block);
-                break;
-              case 'avote-result/v1':
-                await processResultV1(data, confirmedRound, stxn, block.block);
-                break;
-              case 'avote-tl/v1':
-                await processTrustedListV1(data, confirmedRound, stxn, block.block);
-                break;
+              /*case 'something-else/v1':
+                await processSomething(data, confirmedRound, stxn, block.block);
+                break;*/
             }
             console.log(txId, messageType);
           } catch (e) {

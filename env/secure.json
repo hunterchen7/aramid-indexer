@@ -4,19 +4,19 @@
   "authGenesisID": "mainnet-v1.0",
   "authGenesisHash": "wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=",
   "authRealm": "",
-  "graphQLServer": "https://graphql.vote-coin.com/v1/graphql",
+  "graphQLServer": "https://graphql.k8s.aramid.finance/v1/graphql",
   "algod": {
-    "host": "https://mainnet-algorand.api.purestake.io/ps2",
+    "host": "https://algod.aramidmain.a-wallet.net",
     "port": 443,
     "header": "x-api-key",
-    "token": "",
+    "token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     "delay": 1000
   },
   "indexer": {
-    "host": "https://mainnet-algorand.api.purestake.io/idx2",
+    "host": "https://indexer.aramidmain.a-wallet.net2",
     "port": 443,
     "header": "x-api-key",
-    "token": "",
+    "token": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     "delay": 1000
   }
 }
